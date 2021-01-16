@@ -69,6 +69,7 @@ class thing{
 
 
 let counter = 0
+optionBox[0].style.color="rgb(0, 162, 255)"
 optionBox.forEach((btn,i)=>{
     btn.addEventListener("click",()=>{
         optionBox.forEach(remove=>{
@@ -134,9 +135,7 @@ function render() {
         case 1:
             done = doneFil.map(t=>
                 `<div class="todo__thing">
-                <input type="checkbox" class="check" value=${t.status}>
                 <p class="todo__thing-name">${t.name}</p>
-                <button href="" class="todo__thing-remove"><i class="fas fa-trash"></i></button>
             </div>`
             )
             creatList.innerHTML = done.join('') 
@@ -152,25 +151,11 @@ function render() {
                     todoNameD[i].classList.remove("check")
                 }
             })
-            checkBoxD.forEach((value,i) => {
-                value.addEventListener("click",()=>{
-                    checkStatus(value.checked,i)
-                })
-            });
-        
-            let btnRem = document.querySelectorAll(".todo__thing-remove")
-            btnRem.forEach((btn,i)=>{
-                btn.addEventListener("click",()=>{
-                    removeItem(i)
-                })
-            })
             break;
         case 2:
             unDone = unDoneFil.map(t=>
                 `<div class="todo__thing">
-                <input type="checkbox" class="check" value=${t.status}>
                 <p class="todo__thing-name">${t.name}</p>
-                <button href="" class="todo__thing-remove"><i class="fas fa-trash"></i></button>
             </div>`
             )
             creatList.innerHTML = unDone.join('')
@@ -185,18 +170,6 @@ function render() {
                     checkBoxUD[i].checked = false
                     todoNameUD[i].classList.remove("check")
                 }
-            })
-            checkBoxUD.forEach((value,i) => {
-                value.addEventListener("click",()=>{
-                    checkStatus(value.checked,i)
-                })
-            });
-        
-            let btnRe = document.querySelectorAll(".todo__thing-remove")
-            btnRe.forEach((btn,i)=>{
-                btn.addEventListener("click",()=>{
-                    removeItem(i)
-                })
             })
             break;
     }
@@ -238,6 +211,7 @@ function checkStatus(value,i){
         list = JSON.parse(localStorage.getItem("bao_todoList"))
     }
     list[i].status = value
+    console.log(list[i]);
     localStorage.setItem("bao_todoList",JSON.stringify(list))
     render()
 }
