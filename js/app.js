@@ -139,18 +139,18 @@ function render() {
             </div>`
             )
             creatList.innerHTML = done.join('') 
-            let checkBoxD = document.querySelectorAll(".check")
-            let todoNameD = document.querySelectorAll(".todo__thing-name")
-            doneFil.forEach((value,i)=>{
-                if (value.status === true) {
-                    checkBoxD[i].checked = true
-                    todoNameD[i].classList.add("check")
-                }
-                else{
-                    checkBoxD[i].checked = false
-                    todoNameD[i].classList.remove("check")
-                }
-            })
+            // let checkBoxD = document.querySelectorAll(".check")
+            // let todoNameD = document.querySelectorAll(".todo__thing-name")
+            // doneFil.forEach((value,i)=>{
+            //     if (value.status === true) {
+            //         checkBoxD[i].checked = true
+            //         todoNameD[i].classList.add("check")
+            //     }
+            //     else{
+            //         checkBoxD[i].checked = false
+            //         todoNameD[i].classList.remove("check")
+            //     }
+            // })
             break;
         case 2:
             unDone = unDoneFil.map(t=>
@@ -159,18 +159,18 @@ function render() {
             </div>`
             )
             creatList.innerHTML = unDone.join('')
-            let checkBoxUD = document.querySelectorAll(".check")
-            let todoNameUD = document.querySelectorAll(".todo__thing-name")
-            unDone.forEach((value,i)=>{
-                if (value.status === true) {
-                    checkBoxUD[i].checked = true
-                    todoNameUD[i].classList.add("check")
-                }
-                else{
-                    checkBoxUD[i].checked = false
-                    todoNameUD[i].classList.remove("check")
-                }
-            })
+            // let checkBoxUD = document.querySelectorAll(".check")
+            // let todoNameUD = document.querySelectorAll(".todo__thing-name")
+            // unDone.forEach((value,i)=>{
+            //     if (value.status === true) {
+            //         checkBoxUD[i].checked = true
+            //         todoNameUD[i].classList.add("check")
+            //     }
+            //     else{
+            //         checkBoxUD[i].checked = false
+            //         todoNameUD[i].classList.remove("check")
+            //     }
+            // })
             break;
     }
     // optionBox.addEventListener("click",()=>{
